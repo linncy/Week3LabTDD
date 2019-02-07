@@ -70,4 +70,32 @@ public class AppTest
     	assert((float)1.6==results.get("neymar"));
     	
     }
+    
+    public void testFindTopScorer()
+    {
+    	Search mockSearch = mock(Search.class);
+    	HashMap<String, ArrayList<Integer>> fakeMap = new HashMap<String, ArrayList<Integer>>();
+    	ArrayList<Integer> messi = new ArrayList<Integer>();
+    	messi.add(100);
+    	messi.add(200); //200/100
+    	ArrayList<Integer> ronaldo = new ArrayList<Integer>();
+    	ronaldo.add(80);
+    	ronaldo.add(150); //150/80
+    	ArrayList<Integer> neymar = new ArrayList<Integer>();
+    	neymar.add(50);
+    	neymar.add(80); //80/50
+    	
+    	fakeMap.put("messi", messi);
+    	fakeMap.put("ronaldo",ronaldo);
+    	fakeMap.put("neymar",neymar);
+    	
+    	when(mockSearch.returnAll()).thenReturn(fakeMap);
+    	
+    	HashMap<String, Integer> results = 
+    			util.findTopScorer(mockSearch); // pass the fake service
+    	
+    	assert(results.containsKey("messi"));
+    	assert(200==results.get("messi"));
+    	
+    }
 }

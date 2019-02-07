@@ -20,9 +20,25 @@ public class Utility {
 		return map;
 	}
 	
-public HashMap<String, Integer>  findTopScorer(Search search){
+	public HashMap<String, Integer>  findTopScorer(Search search){
 		
-		return null;
+		HashMap<String, ArrayList<Integer>> playerScore = search.returnAll();
+		
+		HashMap<String, Integer> map = new HashMap<String, Integer> ();
+		
+		int highestScore= -1;
+		String name = "";
+		
+		for(String player: playerScore.keySet()){
+			if(playerScore.get(player).get(1)>=highestScore){
+				highestScore = playerScore.get(player).get(1);
+				name = player;
+			}
+		}
+		
+		map.put(name, highestScore);
+		
+		return map;
 	}
 	
 }
