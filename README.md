@@ -17,3 +17,5 @@ MinorGoal: Use Mockito.
 The Main Goal: The Development must follow Test-Driven-Development principles. 
 And finally, with Travis CI, we want to check the coverage of our test suite. 
 
+[![Build Status](https://travis-ci.org/shaifcs/Week3LabTDD.svg?branch=master)](https://travis-ci.org/linncy/Week3LabTDD)
+[![codecov](https://codecov.io/gh/shaifcs/Week3LabTDD/branch/master/graph/badge.svg)](https://codecov.io/gh/linncy/Week3LabTDD)
